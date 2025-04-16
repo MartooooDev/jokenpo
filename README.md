@@ -4,19 +4,19 @@ Repositório para o código do jogo Jokenpo, trabalho da disciplina de Raciocín
 
 ## Como jogar
 
-    No Jokenpo, cada jogador escolhe uma opção entre pedra, papel e tesoura. Após ambos escolherem, devem revelar ao mesmo tempo sua escolha, e o ganhador será decidido com base em qual mão é mais forte, seguindo a seguinte ordem:
+No Jokenpo, cada jogador escolhe uma opção entre pedra, papel e tesoura. Após ambos escolherem, devem revelar ao mesmo tempo sua escolha, e o ganhador será decidido com base em qual mão é mais forte, seguindo a seguinte ordem:
 
-- Pedra ganha de Tesoura;
-- Tesoura ganha de Papel;
-- Papel ganha de pedra;
+* Pedra ganha de Tesoura;
+* Tesoura ganha de Papel;
+* Papel ganha de pedra;
 
-    Caso os dois jogadores escolham a mesma opção na rodada, ocorrerá um empate, e haverá uma nova rodada para decidir o vencedor.
+Caso os dois jogadores escolham a mesma opção na rodada, ocorrerá um empate, e haverá uma nova rodada para decidir o vencedor.
 
 #### O Programa
 
-    Para jogar Jokenpo neste programa, o usuário deverá escolher uma opção entre três modos de jogo: JxJ (Jogador vs Jogador), JxCOM (Jogador vs Computador) e COMxCOM (Computador vs Computador).
+Para jogar Jokenpo neste programa, o usuário deverá escolher uma opção entre três modos de jogo: JxJ (Jogador vs Jogador), JxCOM (Jogador vs Computador) e COMxCOM (Computador vs Computador).
 
-    Cada uma das entidades que participam do jogo tem um comportamento:
+Cada uma das entidades que participam do jogo tem um comportamento:
 
 - Jogador:
   - Cada jogador incluído na partida terá seu nome solicitado, e, após todos os jogadores inserirem seus nomes, o jogo terá início.
