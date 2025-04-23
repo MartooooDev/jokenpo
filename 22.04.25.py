@@ -1,24 +1,36 @@
+# --------------------------------------------------
+# Trabalho da disciplina de Raciocínio Algorítmico
+# Pedra, papel, tesoura;
+#
+# Data: 16/04/2025
+# --------------------------------------------------
+
+
 import random
+from time import sleep
 
-jogador_humano1 = input("Digite seu nome: ")
-# jogador_humano2 = 
-# cpu1 =
-# cpu2 =
-# pedra = 1 
-# tesoura = 2
-# papel = 3
-jogar = int(input("Você gostaria de jogar jokenpo?\nPara jogar digite 1, para não jogar digite 2: "))
+#Início do jogo
+print('Bem-vindo ao Jokenpo!');
+exit = 0;
 
-if jogar == 1:
-    print(f"Parabéns {jogador_humano1}, você vai jogar!")
-    print("\n-------(1)jogador vs jogador-------\n-------(2)jogador vs cpu-------\n-------(3)cpu vs cpu-------\n--------------(4)sair--------------")
-    jogar2 = int(input("Gostaria de jogar quais modos do jokenpo?\n1, 2, 3 ou 4?: "))
+#Apresentação das opções
+while opcao != 1:
+    print('Selecione uma opção para jogar: ');
+    print('1- Jogador VS Jogador');
+    print('2- Jogador VS COM');
+    print('3- COM VS COM');
+    print('4- Sair');
 
-    if jogar2 == 1:
-        print("jogador vs jogador")
-    elif jogar2 == 2:
-        print("jogador vs cpu")
-    elif jogar2 == 3:
+    print('----------------------------------');
+    opcao = int(input('Sua escolha: '));
+    print('----------------------------------');
+
+    #Jogador VS Jogador
+
+    #Jogador VS COM
+
+    #COM VS COM
+    if opcao == 3:
         print("cpu vs cpu")
         escolha_cpu1 = random.randint(1, 3)  
         escolha_cpu2 = random.randint(1, 3) 
@@ -45,22 +57,17 @@ if jogar == 1:
         if escolha_cpu1 == escolha_cpu2:
             print("Empate!")
         elif (escolha_cpu1 == 1 and escolha_cpu2 == 2) or \
-             (escolha_cpu1 == 2 and escolha_cpu2 == 3) or \
-             (escolha_cpu1 == 3 and escolha_cpu2 == 1):
+            (escolha_cpu1 == 2 and escolha_cpu2 == 3) or \
+            (escolha_cpu1 == 3 and escolha_cpu2 == 1):
             print("cpu 1 venceu!")
         else:
             print("cpu 2 venceu!")
-        
-    elif jogar2 == 4:
-        print("Saindo do jogo...")
-    else:
-        print("Opção inválida. Escolha 1, 2, 3 ou 4.")
-elif jogar == 2:
-    print("Parece que você não quer jogar")
-else:
-    print("Opção inválida. Digite 1 para jogar ou 2 para sair.")
-    
-# pedra < papel, pedra = pedra, pedra > tesoura
-# tesoura < pedra, tesoura = tesoura, tesoura > papel
-# papel < tesoura, papel = papel, papel > pedra
 
+    #Sair
+    if opcao == 4:
+        print('Saindo do jogo...');
+        sleep(1);
+        exit = 1;
+        break;
+    else:
+        print('Opção inválida! Digite um valor válido.');
