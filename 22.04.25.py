@@ -5,6 +5,7 @@
 # Data: 16/04/2025
 # --------------------------------------------------
 import random
+import os
 from time import sleep
 
 #Início do jogo
@@ -13,6 +14,8 @@ exit = 0;
 
 #Apresentação das opções
 while exit != 1:
+    sleep(3)
+    os.system('cls')
     print('Selecione uma opção para jogar: ');
     print('1- Jogador VS Jogador');
     print('2- Jogador VS COM');
