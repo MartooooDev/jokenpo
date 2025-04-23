@@ -11,10 +11,10 @@ from time import sleep
 #Início do jogo
 print('Bem-vindo ao Jokenpo!');
 exit = 0;
+sleep(1)
 
 #Apresentação das opções
 while exit != 1:
-    sleep(2)
     os.system('cls')
 
     continuar = 0;
@@ -37,13 +37,13 @@ while exit != 1:
         sleep(1);
         exit = 1;
         break;
-    else:
-        print('Opção inválida! Digite um valor válido.');
 
-    if opcao != 3 and opcao != 4 :
+    if opcao == 1 or opcao == 2 :
         nome_j1 = input("Digite o nome do jogador 1:\n")
-        if (opcao == 1):
-            nome_j2 = input("Digite o nome do jogador 2:\n")
+        nome_j2 = input("Digite o nome do jogador 2:\n")
+    elif opcao == 2:
+        nome_j1 = input("Digite o nome do jogador 1:\n")
+        nome_j2 = 'COM';
     elif opcao == 3 :
         nome_j1 = 'COM';
         nome_j2 = 'COM';
@@ -97,7 +97,6 @@ while exit != 1:
                 
             continuar = int(input("Deseja continuar? \n1- Sim\n2- Não"))
 
-    
         #Jogador VS COMPUTADOR
         if opcao == 2:
             print("Modo: Jogador vs Computador Selecionado!\n")
@@ -178,7 +177,7 @@ while exit != 1:
 
             continuar = int(input("Deseja continuar? \n1- Sim\n2- Não"))
                 
-    #COM VS COM
+        #COM VS COM
         if opcao == 3:
             print("cpu vs cpu")
             escolha_cpu1 = random.randint(1, 3)  
@@ -215,9 +214,14 @@ while exit != 1:
 
             continuar = int(input("Deseja continuar? \n1- Sim\n2- Não"))
 
-    
-    print('Você selecionou a opção de parar de jogar.\n Pontuação final:\n');
-    print('---------------')
-    print(f'|  {nome_j1}  |  {nome_j2}  |')
-    print(f'|   {pontuacao_j1}  |   {pontuacao_j2}  |')
-    print('---------------')
+        
+        else:
+            print('Opção inválida! Digite um valor válido.');
+            break;
+
+    if continuar == 2:
+        print('Você selecionou a opção de parar de jogar.\n Pontuação final:\n');
+        print('---------------')
+        print(f'|  {nome_j1}  |  {nome_j2}  |')
+        print(f'|   {pontuacao_j1}  |   {pontuacao_j2}  |')
+        print('---------------')
