@@ -4,8 +4,6 @@
 #
 # Data: 16/04/2025
 # --------------------------------------------------
-opcao = 0
-
 import random
 from time import sleep
 
