@@ -5,7 +5,6 @@
 # Data: 16/04/2025
 # --------------------------------------------------
 import random
-import os
 from time import sleep
 
 #Início do jogo
@@ -15,7 +14,7 @@ sleep(1)
 
 #Apresentação das opções
 while exit != 1:
-    os.system('cls')
+
 
     continuar = 0;
     pontuacao_j1 = 0;
@@ -206,13 +205,13 @@ while exit != 1:
             elif (escolha_cpu1 == 1 and escolha_cpu2 == 2) or \
                 (escolha_cpu1 == 2 and escolha_cpu2 == 3) or \
                 (escolha_cpu1 == 3 and escolha_cpu2 == 1):
-                input("cpu 1 venceu!")
+                input("cpu 1 venceu!: Pressione enter...")
                 pontuacao_j1 += 1;
             else:
-                input("cpu 2 venceu!")
+                input("cpu 2 venceu!: Pressione enter...")
                 pontuacao_j2 += 1;
 
-            continuar = int(input("Deseja continuar? \n1- Sim\n2- Não"))
+            continuar = int(input("Deseja continuar? \n1- Sim\n2- Não: "))
 
         
         else:
