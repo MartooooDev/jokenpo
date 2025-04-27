@@ -16,12 +16,13 @@ sleep(1)
 
 #Apresentação das opções
 while exit != 1:
-    os.system('cls' if os.name == 'nt' else 'clear') #Em uma pesquisa, econtrei que no Linux o comando é diferente (Martin usando Ubuntu)
+    os.system('cls' if os.name == 'nt' else 'clear') #No Linux o comando é diferente (Martin usando Ubuntu)
 
     continuar = 0
     pontuacao_j1 = 0
     pontuacao_j2 = 0
     
+    #Menu principal apresentado no começo do programa
     print('Selecione uma opção para jogar: ')
     print('1- Jogador VS Jogador')
     print('2- Jogador VS Computador')
@@ -29,6 +30,8 @@ while exit != 1:
     print('4- Sair')
 
     print('+' + '-' * 30 + '+')
+
+    #Validadores de entrada, p/ garantir q usuário insira valores váliodos
     opcao = 0
     while opcao < 1 or opcao > 4:
         opcao = int(input('Sua escolha: '))
@@ -36,7 +39,7 @@ while exit != 1:
             print("*Opção inválida. Escolha entre 1 e 4.*")
     print('+' + '-' * 30 + '+')
     
-    #Sair
+    #Saída do programa
     if opcao == 4:
         print('Saindo do jogo...')
         sleep(1)
@@ -46,6 +49,7 @@ while exit != 1:
         exit = 1
         break
 
+    #Entrada de nomes antes do loop da rejogabilidade, para não precisar ficar inserindo toda vez, e ficar mais fácil de mostrar no placar
     if opcao == 1 :
         nome_j1 = input("Digite o nome do jogador 1:\n")
         nome_j2 = input("Digite o nome do jogador 2:\n")
@@ -56,10 +60,11 @@ while exit != 1:
         nome_j1 = 'COM1'
         nome_j2 = 'COM2'
 
+    #Loop de rejogabilidade
     while continuar != 2:
         #Jogador VS Jogador
         if opcao == 1:
-            print('Você selecionou Jogador VS Jogador')
+            print('Você selecionou Jogador vs Jogador')
             print('+' + '-' * 30 + '+')
             print('Caso não estejam cientes das regras, aqui está um resumo simples: ')
             print('Pedra ganha de Tesoura')
@@ -71,11 +76,12 @@ while exit != 1:
             print('Vamos começar o jogo!')
             print('+' + '-' * 30 + '+')
 
+# INÍCIO DO BLOCO DE ESCOLHA DO JOGADOR 1  
             print('1- Pedra')
             print('2- Papel')
             print('3- Tesoura\n')
-
-            escolha_j1 = 0
+                                              
+            escolha_j1 = 0                                                                          
             while escolha_j1 < 1 or escolha_j1 > 3:
                 escolha_j1 = int(input(f'{nome_j1}, Escolha uma das opções (1, 2 ou 3): '))
                 if escolha_j1 < 1 or escolha_j1 > 3:
@@ -88,8 +94,9 @@ while exit != 1:
             else:
                 escolha_j1_convertido = "Tesoura"
 
+# FIM DO BLOCO DE ESCOLHA DO JOGADOR 1  
             print('+' + '-' * 30 + '+')
-
+# INÍCIO DO BLOCO DE ESCOLHA DO JOGADOR 2  
             print('\n\n1- Pedra')
             print('2- Papel')
             print('3- Tesoura\n')
@@ -106,6 +113,9 @@ while exit != 1:
                 escolha_j2_convertido = "Papel"
             else:
                 escolha_j2_convertido = "Tesoura"
+
+# FIM DO BLOCO DE ESCOLHA DO JOGADOR 2
+# INÍCIO DO BLOCO DE RESULTADO DA RODADA
 
             sleep(2)
             print('+' + '-' * 30 + '+')
@@ -131,14 +141,16 @@ while exit != 1:
                 print(f'{nome_j1} ganhou!')
                 sleep(2)
                 pontuacao_j1 += 1
-                
+
+# FIM DO BLOCO DE RESULTADO DA RODADA
+# Escolha de continuar o jogo ou não; se escolher 2, quebra o loop de continuar e mostra o placar final
             continuar = 0
             while continuar < 1 or continuar > 2:
                 continuar = int(input("Deseja continuar? \n1- Sim\n2- Não\n"))
                 if continuar < 1 or continuar > 2:
                     print("*Opção inválida. Escolha 1 ou 2.*")
 
-        #Jogador VS COMPUTADOR
+        # Jogador VS COMPUTADOR
         if opcao == 2:
             print("Você selecionou o modo Jogador vs Computador!\n")
 
@@ -156,10 +168,6 @@ while exit != 1:
                 if escolha_jogador < 1 or escolha_jogador > 3:
                     print("*Número inválido. Escolha 1, 2 ou 3.*")
 
-            # Gerar jogada do computador (número)
-            escolha_computador = random.randint(1, 3)
-
-            # Converter número da escolha do jogador para nome
             if escolha_jogador == 1:
                 escolha_jogador_convertido = "Pedra"
             elif escolha_jogador == 2:
@@ -167,15 +175,17 @@ while exit != 1:
             else:
                 escolha_jogador_convertido = "Tesoura"
 
-            # Converter número da escolha do computador para nome
+# INÍCIO DO BLOCO DE ESCOLHA DO COMPUTADOR
+            escolha_computador = random.randint(1, 3)
+
             if escolha_computador == 1:
                 escolha_computador_convertido = "Pedra"
             elif escolha_computador == 2:
                 escolha_computador_convertido = "Papel"
             else:
                 escolha_computador_convertido = "Tesoura"
+# FIM DO BLOCO DE ESCOLHA DO COMPUTADOR
 
-            # Mostrar as escolhas com nomes
             sleep(2)
             print('+' + '-' * 30 + '+')
             print(f'| {"ESCOLHAS DA RODADA":^28} |')
@@ -186,7 +196,6 @@ while exit != 1:
             print('+' + '-' * 30 + '+')
             sleep(2)
 
-            # Lógica do Jokenpô usando os números (1:Pedra, 2:Tesoura, 3:Papel)
             if escolha_jogador == escolha_computador:
                 sleep(1), print('.'), sleep(1), print('.')
                 print('Empate!')
@@ -212,7 +221,7 @@ while exit != 1:
                 if continuar < 1 or continuar > 2:
                     print("*Opção inválida. Escolha 1 ou 2.*")
                 
-        #COM VS COM
+        # COMPUTADOR VS COMPUTADOR
         if opcao == 3:
             print("Você selecionou o modo Computador vs Computador!\n")
 
@@ -220,14 +229,16 @@ while exit != 1:
             print('Vamos começar o jogo!')
             print('+' + '-' * 30 + '+')
             escolha_cpu1 = random.randint(1, 3)  
-            escolha_cpu2 = random.randint(1, 3) 
-
+            
             if escolha_cpu1 == 1:
                 escolha_cpu1_convertido = "Pedra"
             elif escolha_cpu1 == 2:
                 escolha_cpu1_convertido = "Papel"
             else:
                 escolha_cpu1_convertido = "Tesoura"
+
+
+            escolha_cpu2 = random.randint(1, 3) 
 
             if escolha_cpu2 == 1:
                 escolha_cpu2_convertido = "Pedra"
@@ -246,7 +257,6 @@ while exit != 1:
             print('+' + '-' * 30 + '+')
             sleep(2)
 
-            # Lógica do Jokenpô
             if escolha_cpu1 == escolha_cpu2:
                 sleep(1), print('.'), sleep(1), print('.')
                 print("Empate!")
@@ -270,7 +280,9 @@ while exit != 1:
                 if continuar < 1 or continuar > 2:
                     print("*Opção inválida. Escolha 1 ou 2.*")
 
+# INICIO DO BLOCO DE RESULTADO FINAL
     if continuar == 2:
+        # Aqui a pontuação acumulada em todas as rodadas será mostrada após o input de 'continuar' ser 2
         print('Você selecionou a opção de parar de jogar.\n')
         sleep(2)
         print('+' + '-' * 30 + '+')
@@ -282,3 +294,4 @@ while exit != 1:
         print('+' + '-' * 30 + '+')
         sleep(2)
         input('Pressione ENTER para voltar ao menu principal...')
+        # Após essa mensagem, o programa voltará ao menu principal
