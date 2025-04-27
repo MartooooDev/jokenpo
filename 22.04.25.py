@@ -6,6 +6,7 @@
 # --------------------------------------------------
 
 import random
+import os
 from time import sleep
 
 #Início do jogo
